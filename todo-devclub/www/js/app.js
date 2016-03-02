@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('todo-devclub', ['ionic', 'LocalStorageModule'])
 .controller('MainCtrl', function($scope, $ionicModal, localStorageService){
-  var taskData = "task";
+  //var taskData = "task";
   $scope.tasks = [];
   $scope.task = {};
   
@@ -18,12 +18,12 @@ angular.module('todo-devclub', ['ionic', 'LocalStorageModule'])
     $scope.newTaskModal = modal;
   });
   
-  $scope.openTaskModal = function() {
+  /*$scope.openTaskModal = function() {
     $scope.newTaskModal.show();
   };
   $scope.closeTaskModal = function() {
     $scope.newTaskModal.hide();
-  };
+  };*/
   
   $scope.getTasks = function(){
     //fetches task from local storage
@@ -42,20 +42,20 @@ angular.module('todo-devclub', ['ionic', 'LocalStorageModule'])
     $scope.newTaskModal.hide();
   }
   
-  $scope.removeTask = function(index){
+  /*$scope.removeTask = function(index){
     //removes a task
     $scope.tasks.splice(index, 1);
     localStorageService.set(taskData, $scope.tasks);
-  }
+  }*/
   
-  $scope.completeTask = function(index){
+  /*$scope.completeTask = function(index){
     //updates a task as completed 
     if (index !== -1) {
       $scope.tasks[index].completed = true; 
       
     } 
     localStorageService.set(taskData, $scope.tasks);
-  }
+  }*/
   
 })
 .run(function($ionicPlatform) {
